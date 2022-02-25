@@ -8,6 +8,12 @@
 class Solution {
     public String longestPalindrome(String s) {
         String result = null;
+        int length = s.length();
+        int longest = 0;
+        
+        for (int i = 0; i < length; i++) {
+
+        }
 
         return result;
     }
