@@ -30,7 +30,9 @@ class Solution {
             res.add(productsList.subList(map.get(ceiling), Math.min(map.get(ceiling) + 3, map.get(floor) + 1)));
         }
 
-        while (res.size() < searchWord.length()) res.add(new ArrayList<>());
+        while (res.size() < searchWord.length()) {
+            res.add(new ArrayList<>());
+        }
         return res;
     }
 }
