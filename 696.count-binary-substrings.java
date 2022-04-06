@@ -20,6 +20,7 @@ class Solution {
             }
         }
         return result + Math.min(cur, pre);
+        
     }
 }
 // @lc code=end
