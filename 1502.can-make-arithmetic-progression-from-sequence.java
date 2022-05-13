@@ -10,11 +10,10 @@ import java.util.Arrays;
 class Solution {
     public boolean canMakeArithmeticProgression(int[] arr) {
         Arrays.sort(arr);
-        int difference = Math.abs(arr[1] - arr[0]);
-
-        for (int i = 0; i < arr.length; i++) {
-            if (i > 0 && Math.abs(arr[i] - arr[i-1]) != difference) {
-                System.out.println("diff: " + difference + " diff: " + Math.abs(arr[i] - arr[i-1]));
+        int diff = arr[1] - arr[0];
+        
+        for (int i = 2; i < arr.length; i++) {
+            if (arr[i] - arr[i-1] != diff) {
                 return false;
             }
         }
