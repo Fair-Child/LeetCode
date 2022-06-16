@@ -12,7 +12,6 @@ class Solution {
     public int rob(int[] nums) {
         int len = nums.length;
 
-        // if no house, 0 profit
         if (len == 0) {
             return 0;
         }
