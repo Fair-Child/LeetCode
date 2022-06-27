@@ -7,6 +7,7 @@
 // @lc code=start
 class Solution {
     public int maxSubArray(int[] nums) {
+       
         int currentSubarray = nums[0];
         int maximumSubarray = nums[0];
 
@@ -14,7 +15,7 @@ class Solution {
             currentSubarray = Math.max(nums[i], currentSubarray + nums[i]);
             maximumSubarray = Math.max(currentSubarray, maximumSubarray);
         }
-
+        
         return maximumSubarray;
     }
 }
