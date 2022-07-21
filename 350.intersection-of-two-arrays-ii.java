@@ -9,35 +9,21 @@ import java.util.List;
 // @lc code=start
 class Solution {
     public int[] intersect(int[] nums1, int[] nums2) {
-        
         Arrays.sort(nums1);
         Arrays.sort(nums2);
-
-        int pointer1 = 0, pointer2 = 0;
-        List<Integer> list = new ArrayList<>();
-
-        while (true) {
-            if (pointer1 >= nums1.length || pointer2 >= nums2.length) {
-                break;
-            }
-
-            if (nums1[pointer1] == nums2[pointer2]) {
-                list.add(nums1[pointer1]);
-                pointer1++;
-                pointer2++;
-            } else if (nums1[pointer1] < nums2[pointer2]) {
-                pointer1++;
+        
+        int i = 0, j = 0, k = 0;
+        while (i < nums1.length && j < nums2.length) {
+            if (nums1[i] < nums2[j]) {
+                i++;
+            } else if (nums1[i] > nums2[j]) {
+                j++;
             } else {
-                pointer2++;
+                nums1[k++] = nums1[i++];
+                j++;
             }
         }
-
-        int[] result = new int[list.size()];
-        for (int i = 0; i < list.size(); i++) {
-            result[i] = list.get(i);
-        }
-
-        return result;
+        return Arrays.copyOfRange(nums1, 0, k);
     }
 }
 // @lc code=end

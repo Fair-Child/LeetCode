@@ -7,16 +7,16 @@
 // @lc code=start
 class Solution {
     public int maxSubArray(int[] nums) {
-       
-        int currentSubarray = nums[0];
-        int maximumSubarray = nums[0];
+
+        int currentSubArray = nums[0];
+        int maximumSubArray = nums[0];
 
         for (int i = 1; i < nums.length; i++) {
-            currentSubarray = Math.max(nums[i], currentSubarray + nums[i]);
-            maximumSubarray = Math.max(currentSubarray, maximumSubarray);
+            currentSubArray = Math.max(currentSubArray + nums[i], nums[i]);
+            maximumSubArray = Math.max(currentSubArray, maximumSubArray);
         }
         
-        return maximumSubarray;
+        return maximumSubArray;
     }
 }
 // @lc code=end
