@@ -6,6 +6,7 @@
 
 // @lc code=start
 class Solution {
+
     public void merge(int[] nums1, int m, int[] nums2, int n) {
         
         // make a copy of the nums1 first m elements
