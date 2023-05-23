@@ -16,27 +16,29 @@
  * }
  */
 class Solution {
-    public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+    public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
         
-        ListNode prehead = new ListNode(-1);
+        ListNode prev = new ListNode();
+        ListNode curr = prev;
 
-        ListNode prev = prehead;
-        while (l1 != null && l2 != null) {
-            if (l1.val <= l2.val) {
-                prev.next = l1;
-                l1 = l1.next;
+        while (list1 != null && list2 != null) {
+            if (list1.val <= list2.val) {
+                curr.next = list1;
+                list1 = list1.next;
             } else {
-                prev.next = l2;
-                l2 = l2.next;
+                curr.next = list2;
+                list2 = list2.next;
             }
-            prev = prev.next;
+            curr = curr.next;
         }
+
+        
 
         // At least one of l1 and l2 can still have nodes at this point, so connect
         // the non-null list to the end of the merged list.
-        prev.next = l1 == null ? l2 : l1;
+        curr.next = list1 == null ? list2 : list1;
 
-        return prehead.next;
+        return prev.next;
     }
 }
 // @lc code=end
