@@ -22,9 +22,9 @@ class Solution {
         // head.next = removeElements(head.next, val);
         // return head.val == val ? head.next : head;
 
-        ListNode fakeHead = new ListNode();
-        fakeHead.next = head;
-        ListNode curr = head, prev = fakeHead;
+        ListNode dummyHead = new ListNode();
+        dummyHead.next = head;
+        ListNode prev = dummyHead, curr = head;
 
         while (curr != null) {
             if (curr.val == val) {
@@ -35,7 +35,7 @@ class Solution {
             curr = curr.next;
         }
 
-        return fakeHead.next;
+        return dummyHead.next;
     }
 }
 // @lc code=end

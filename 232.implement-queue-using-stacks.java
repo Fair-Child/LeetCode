@@ -17,13 +17,7 @@ class MyQueue {
     public void push(int x) {
         input.push(x);
     }
-    
-    public int pop() {
-        int x = peek();
-        output.pop();
-        return x;
-    }
-    
+
     public int peek() {
         if (output.empty()) {
             while (!input.empty()){
@@ -31,6 +25,12 @@ class MyQueue {
             }
         }
         return output.peek();
+    }
+
+    public int pop() {
+        int x = peek();
+        output.pop();
+        return x;
     }
     
     public boolean empty() {
