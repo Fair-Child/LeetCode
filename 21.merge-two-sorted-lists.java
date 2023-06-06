@@ -18,6 +18,8 @@
 class Solution {
     public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
         
+        // Arrays.sort(intervals, (a, b) -> a[0] - b[0]); intervals is a 2D string array: intervals[][]
+
         ListNode head = new ListNode();
         ListNode curr = head;
 
