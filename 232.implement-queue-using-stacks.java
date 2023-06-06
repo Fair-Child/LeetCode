@@ -11,28 +11,25 @@ class MyQueue {
     Stack<Integer> output = new Stack();
 
     public MyQueue() {
-        
+
     }
-    
+
     public void push(int x) {
         input.push(x);
     }
 
     public int peek() {
-        if (output.empty()) {
-            while (!input.empty()){
+        if (output.empty())
+            while (!input.empty())
                 output.push(input.pop());
-            }
-        }
         return output.peek();
     }
 
-    public int pop() {
-        int x = peek();
+    public void pop() {
+        peek();
         output.pop();
-        return x;
     }
-    
+
     public boolean empty() {
         return input.empty() && output.empty();
     }
@@ -47,4 +44,3 @@ class MyQueue {
  * boolean param_4 = obj.empty();
  */
 // @lc code=end
-
